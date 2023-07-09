@@ -1,0 +1,196 @@
+body {
+    background-color: #553333;
+    color: #dddddd;
+}
+body *{
+    color: inherit;
+}
+#title-bar {
+    color: #333333;
+    background-color: #dddddd;
+    padding: 10px 10px 40px 10px;
+    border: 5px solid gray;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 6px;
+}
+#page-contents {
+    padding: 10px;
+}
+
+#page-header {
+    font-size: 60px;
+    color: #dddddd;
+    text-align: center;
+}
+.listing-image {
+    max-height: 200px;
+    max-width: 200px;
+    border: 5px solid gray;
+    border-top: 0px;
+    border-left: 0px;
+    border-radius: 6px;
+}
+.listing-container {
+    display: flex;
+    border: 5px solid gray;
+    border-top: 0px;
+    border-left: 0px;
+    padding: 10px;
+    margin: 5px auto 5px auto;
+    background-color: #dddddd;
+    border-radius: 6px;
+    color: #333333;
+}
+.listing-image-container {
+    width: 200px;
+    height: 200px;
+    border: 0px solid black;
+    text-align: center;
+}
+.listing-content-container {
+    margin: 0px 50px
+}
+.listing-title {
+    font-size: 32px;
+}
+.listing-description {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.listing-price {
+    font-size: 26px;
+    color: green;
+}
+.form-label {
+    margin: 16px auto 0px auto;
+    text-align: center;
+    font-size: 20px;
+    color: #dddddd
+}
+.form-field > input{
+    display: block;
+    margin: 0px auto;
+    width: 300px;
+    padding: 4px 16px;
+    border-radius: 5% / 50%;
+    border: 2px solid dark-gray;
+    color: #333333;
+}
+.form-submit {
+    display: block;
+    font-size: 20px;
+    padding: 12px 32px;
+    margin: 64px auto;
+    border-radius: 80% /10%;
+    border: 2px solid dark-gray;
+    color: #333333;
+}
+
+#listing-page-container {
+    display: block;
+    background-color: #dddddd;
+    color: #333333;
+    border: 5px solid gray;
+    border-top: 0px;
+    border-left: 0px;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+}
+
+#listing-page-description {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    margin: 50px 0px;
+}
+.listing-page-top-button {
+    padding: 5px;
+    border-radius: 6px;
+    border: 2px solid #777777;
+    border-left: 0px;
+    border-top: 0px;
+    background-color: #555555;
+    margin: 6px 12px;
+    width:250px;
+    height: 100px;
+}
+#listing-page-top {
+    display: flex;
+    justify-content: center;
+    color: #dddddd;
+    font-size: 30px;
+}
+
+#listing-page-image {
+    max-width: 600px;
+    max-height: 450px;
+    border-radius: 6px;
+    margin: 10px 0px;
+}
+
+#listing-page-bid-container {
+    font-size: 30px;
+    padding: 24px;
+}
+
+#category-list-container {
+    display: block;
+    flex-wrap: wrap;
+    background-color: #dddddd;
+    color: #333333;
+    font-size: 64px;
+    border: 5px solid gray;
+    border-top: 0px;
+    border-left: 0px;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.category-list-item-div {
+    background-color : #bbbbbb;
+    padding: 6px 12px;
+    margin: 10px auto;
+    border: 5px solid gray;
+    border-top: 0px;
+    border-left: 0px;
+    border-radius: 6px;
+    text-align: center;
+    width: 400px;
+}
+
+.category-list-item {
+    list-style-type: none;
+}
+
+.comment-box-container {
+    display: block;
+    margin: auto auto;
+    max-width: 800px;
+    color: #dddddd;
+    text-align: left;
+    background-color: #555555;
+    border: 5px solid gray;
+    border-top: 0px;
+    border-left: 0px;
+    border-radius: 6px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+.comment-container {
+    display: block;
+    padding: 10px;
+    background-color: #dddddd;
+    border-radius: 6px;
+    color: #555555;
+    margin: 10px 0px;
+}
+.comment-form textarea, .comment-form input {
+    width: 100%;
+    color: #555555;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

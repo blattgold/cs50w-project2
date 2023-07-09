@@ -1,0 +1,23 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2 id="page-header">Active Listings</h2>
+
+    {% for listing in listings %}
+        {% if not listing.closed %}
+            <a href="{% url 'view-listing' listing.title %}" style="text-decoration:none">
+                <div class="listing-container">
+                    <div class="listing-image-container">
+                        <img class="listing-image" src="{{ listing.image }}"alt="{{ listing.title }}">
+                    </div>
+                    <div class="listing-content-container">
+                        <div class="listing-title">{{ listing.title }}</div>
+                        <div class="listing-description">{{ listing.description }}</div>
+                        <b><div class="listing-price">{{ listing.highest_bid | floatformat:2 }}€</div></b>
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+    
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2 id="page-header">{{ title }}</h2>
+    <div id="listing-page-container">
+        <div id="listing-page-top">
+            <a href="">
+                <div class="listing-page-top-button">
+                    Author: {{ author }}
+                </div>
+            </a>
+            {% if user.is_authenticated %}
+                {% if on_watchlist %}
+                    <a href="{% url 'watchlist-add' title %}">
+                        <div class="listing-page-top-button">
+                            put on watchlist
+                        </div>
+                    </a>
+                {% else %}
+                    <a href="{% url 'watchlist-remove' title %}">
+                        <div class="listing-page-top-button">
+                            remove from watchlist
+                        </div>
+                    </a>
+                {% endif %}
+            {% endif %}
+            {% if category %}
+                <a href="{% url 'category' category %}">
+                    <div class="listing-page-top-button">
+                        category: {{ category }}
+                    </div>
+                </a>
+            {% else %}
+                <div class="listing-page-top-button">
+                    category: None
+                </div>
+            {% endif %}
+        </div>
+        <img id="listing-page-image" src="{{ image }}">
+        <div id="listing-page-description">
+            {{ description }}
+        </div>
+        <div id="listing-page-bid-container">
+            <div>
+                highest bidder: <b>{{ highest_bidder }}</b>
+            </div>
+            <div>
+                with a bid of: <b>{{ highest_bid | floatformat:2 }}€</b>
+            </div>
+            <div>
+                {% if user.is_authenticated %}
+                    <form action="{% url 'view-listing' title %}" method="post">
+                        {% csrf_token %}
+                        {{ bid_form }}
+                        <input type="submit" value="Submit">
+                    </form>
+                    {% if user == author %}
+                        <div>
+                            <a href="{% url 'close-listing' title %}">close this auction</a>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    log in to bid on item
+                {% endif %}
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <div>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+                <div class="comment-box-container">
+                    <div>Comments</div>
+                    {% for comment in comments %}
+                        <div class="comment-container">
+                            <div>{{ comment.author }}:</div>
+                            <div>{{ comment.content }}</div>
+                        </div>
+                    {% endfor %}
+                    {% if user.is_authenticated %}
+                        <form class="comment-form" action="{% url 'view-listing' title %}" method="post">
+                            {% csrf_token %}
+                            <div>{{ comment_form }}</div>
+                            <input type="submit" value="Submit">
+                        </form>
+                    {% else %}
+                        <div>login to comment</div>
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+{% endblock %}
